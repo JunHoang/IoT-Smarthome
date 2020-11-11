@@ -26,7 +26,7 @@ class Lvroom extends Component {
               <div className="photo-entry-block">
                 <h5>{lvroomthing.name}</h5>
                 <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
-                <Button variant="contained" color="primary" onClick={this.handleClick}>
+                <Button className="m-1" variant="contained" color="primary" onClick={this.handleClick}>
                   {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </Button>
               </div>
