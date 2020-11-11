@@ -1,34 +1,54 @@
 import React, {Component} from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
-  CardTitle } from 'reactstrap';
 import {LVROOMTHINGS} from '../shared/lvroomthings';
+import { Button } from "@material-ui/core";
 
 class Lvroom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lvroomthings: LVROOMTHINGS
+            lvroomthings: LVROOMTHINGS,
+            isToggleOn: LVROOMTHINGS.value
         };
+    }
+
+    handleClick = () => {
+      this.setState(state => ({
+        isToggleOn: !state.isToggleOn
+      }));
     }
 
     render() {
 
       const lvroom = this.props.lvroomthings.map((lvroomthing) => {
-        return (
-          <div className="col-5 col-md-5 m-1">
-            <Card key={lvroomthing.name}>
-              <CardImg src={lvroomthing.image} alt={lvroomthing.name} />
-                <CardBody>
-                  <CardTitle>{lvroomthing.name}</CardTitle>
-                  <CardText>{lvroomthing.value}</CardText>
-                </CardBody>
-            </Card>
-          </div>
-        )
+        if (lvroomthing.name === "lvLight") {
+          return (
+            <div className="flex-container">
+              <div className="photo-entry-block">
+                <h5>{lvroomthing.name}</h5>
+                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
+                <Button variant="contained" color="primary" onClick={this.handleClick}>
+                  {this.state.isToggleOn ? 'ON' : 'OFF'}
+                </Button>
+              </div>
+            </div>
+          )
+        }
+        else {
+          return (
+            <div className="flex-container">
+              <div className="photo-entry-block">
+                <h5>{lvroomthing.name}</h5>
+                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
+                <h6>{lvroomthing.value}</h6>
+              </div>
+            </div>
+          )
+        }
+
       })
         
       return(
-        <div className="container">
+        <div className="flex-container">
           <div className="col-12">
             <h3>LIVING ROOM</h3>
           </div>
