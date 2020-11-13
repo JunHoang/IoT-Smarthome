@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
+import 'react-open-weather/lib/css/ReactWeather.css';
 
 ReactDOM.render(
   <React.StrictMode>

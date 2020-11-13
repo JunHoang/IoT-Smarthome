@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import {LVROOMTHINGS} from '../shared/lvroomthings';
+import {BEDROOMTHINGS} from '../shared/bedroomthings';
 import { Button } from "@material-ui/core";
 import ReactWeather from 'react-open-weather';
 import 'react-open-weather/lib/css/ReactWeather.css';
 
-class Lvroom extends Component {
+
+class Bedroom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lvroomthings: LVROOMTHINGS,
-            isToggleOn: LVROOMTHINGS.value
+            bedroomthings: BEDROOMTHINGS,
+            isToggleOn: BEDROOMTHINGS.value
         };
     }
 
@@ -21,13 +22,13 @@ class Lvroom extends Component {
 
     render() {
 
-      const lvroom = this.props.lvroomthings.map((lvroomthing) => {
-        if (lvroomthing.name === "lvLight") {
+      const bedroom = this.props.bedroomthings.map((bedroomthing) => {
+        if (bedroomthing.name === "bedLight") {
           return (
             <div className="flex-container">
               <div className="photo-entry-block">
-                <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
+                <h5>{bedroomthing.name}</h5>
+                <img className="photo-img"  src={bedroomthing.image} alt={bedroomthing.name}/>
                 <Button className="m-1" variant="contained" color="primary" onClick={this.handleClick}>
                   {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </Button>
@@ -35,30 +36,35 @@ class Lvroom extends Component {
             </div>
           )
         }
-        else {
-          return (
-            <div className="flex-container">
-              <div className="photo-entry-block">
-                <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
-                <h6>Temperature in livingroom is {lvroomthing.value}</h6>
-              </div>
-            </div>
-          )
-        }
+        // else {
+        //   return (
+
+                
+        //   )
+        // }
+
       })
         
       return(
         <div className="flex-container">
           <div className="col-12">
-            <h3>LIVING ROOM</h3>
+            <h3>BEDROOM</h3>
           </div>
           <div className="row">
-            {lvroom}
+              <div>
+                {bedroom}
+              </div>
+          {/* <div>
+          <ReactWeather
+            forecast="today"
+            apikey="965d50f6a45bcf6c54f25be29c7924bb"
+            type="city"
+            city="Mikkeli"/>
+          </div> */}
           </div>
         </div>
       )
 
     }
 }
-export default Lvroom;
+export default Bedroom;
