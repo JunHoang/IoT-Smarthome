@@ -1,18 +1,28 @@
 import React, { Component} from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Lvroom from './LvroomComponent';
 import {LVROOMTHINGS} from '../shared/lvroomthings';
+import Bedroom from './BedroomComponent';
+import {BEDROOMTHINGS} from '../shared/bedroomthings';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    lvroomthings: state.lvroomthings,
+    bedroomthings: state.bedroomthings
+  }
+}
 
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lvroomthings: LVROOMTHINGS
-    }
+    // this.state = {
+    //   lvroomthings: LVROOMTHINGS,
+    //   bedroomthings: BEDROOMTHINGS
+    // }
   }
 
   render() {
@@ -27,15 +37,11 @@ class Main extends Component {
     return (
 
       <div className="App">
-        {/* <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">SMART HOME</NavbarBrand>
-          </div>
-        </Navbar> */}
         <Header/>
         <Switch>
             <Route path='/home' component={HomePage}/>
-            <Route exact path ='/livingroom' component={() => <Lvroom lvroomthings={this.state.lvroomthings}/>} />\
+            <Route exact path ='/livingroom' component={() => <Lvroom lvroomthings={this.props.lvroomthings}/>} />
+            <Route exact path ='/bedroom' component={() => <Bedroom bedroomthings={this.props.bedroomthings}/>} />
             <Redirect to="/home"/>
         </Switch>
         <Footer/>
@@ -45,4 +51,4 @@ class Main extends Component {
 
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
