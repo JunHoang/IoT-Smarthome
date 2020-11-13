@@ -24,12 +24,9 @@ class Header extends Component {
                 <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/home"><img src='assets/images/logo.png' height="30" width="41" alt='Smart Home' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
-                                </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/livingroom'><span className="fa fa-television fa-lg"></span> Living Room</NavLink>
                                 </NavItem>
@@ -41,12 +38,10 @@ class Header extends Component {
                     </div>
                 </Navbar>
                 <Jumbotron>
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>SMART HOME</h1>
-                                <p>Welcome to our IoT Project!</p>
-                            </div>
+                    <div className="flex-container">
+                        <div className="col-12 col-sm-6 align-center">
+                            <h1>SMART HOME</h1>
+                            <p>Welcome to our IoT Project!</p>
                         </div>
                     </div>
                 </Jumbotron>
