@@ -47,14 +47,14 @@ img {
 }
 
 .footer{
-  background-color: #D1C4E9;
+  background-color: #aeb8fe;
   margin:0px auto;
   padding: 20px 0px 20px 0px;
 }
 .jumbotron {
   padding:70px 30px 70px 30px;
   margin:0px auto;
-  background: #9575CD ;
+  background: #758bfd;
   color:floralwhite;
 }
 
@@ -65,7 +65,7 @@ address{
 }
 
 .navbar-dark {
-  background-color: #512DA8;
+  background-color: #27187e;
 }
 
 
