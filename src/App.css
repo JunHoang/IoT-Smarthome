@@ -18,6 +18,7 @@ h4, h5, h6 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #e9ecef;
 }
 
 img {
@@ -47,14 +48,14 @@ img {
 }
 
 .footer{
-  background-color: #aeb8fe;
+  background-color: #adb5bd;
   margin:0px auto;
   padding: 20px 0px 20px 0px;
 }
 .jumbotron {
   padding:70px 30px 70px 30px;
   margin:0px auto;
-  background: #758bfd;
+  background: #8d99ae;
   color:floralwhite;
 }
 
@@ -65,7 +66,7 @@ address{
 }
 
 .navbar-dark {
-  background-color: #27187e;
+  background-color: #2b2d42;
 }
 
 
@@ -98,5 +99,6 @@ address{
     transform: rotate(360deg);
   }
 }
+
 
 

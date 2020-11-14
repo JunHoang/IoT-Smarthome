@@ -44,7 +44,6 @@ class Main extends Component {
             <Route exact path ='/bedroom' component={() => <Bedroom bedroomthings={this.props.bedroomthings}/>} />
             <Redirect to="/home"/>
         </Switch>
-        <Footer/>
       </div>
     );
   }

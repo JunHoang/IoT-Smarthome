@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {BEDROOMTHINGS} from '../shared/bedroomthings';
 import { Button } from "@material-ui/core";
-import ReactWeather from 'react-open-weather';
-import 'react-open-weather/lib/css/ReactWeather.css';
-
 
 class Bedroom extends Component {
     constructor(props) {
@@ -54,13 +51,6 @@ class Bedroom extends Component {
               <div>
                 {bedroom}
               </div>
-          {/* <div>
-          <ReactWeather
-            forecast="today"
-            apikey="965d50f6a45bcf6c54f25be29c7924bb"
-            type="city"
-            city="Mikkeli"/>
-          </div> */}
           </div>
         </div>
       )

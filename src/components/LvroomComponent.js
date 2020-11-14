@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {LVROOMTHINGS} from '../shared/lvroomthings';
 import { Button } from "@material-ui/core";
-import ReactWeather from 'react-open-weather';
-import 'react-open-weather/lib/css/ReactWeather.css';
 
 class Lvroom extends Component {
     constructor(props) {

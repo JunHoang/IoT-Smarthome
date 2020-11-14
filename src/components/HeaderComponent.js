@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { bounce } from 'react-animations';
+import styled, {keyframes} from 'styled-components';
+
+const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`} infinite`;
 
 class Header extends Component {
     constructor(props) {
@@ -17,6 +21,7 @@ class Header extends Component {
           isNavOpen: !this.state.isNavOpen
         });
       }
+
 
       render() {
         return(
@@ -38,10 +43,14 @@ class Header extends Component {
                     </div>
                 </Navbar>
                 <Jumbotron>
-                    <div className="flex-container">
-                        <div className="col-12 col-sm-6 align-center">
-                            <h1>SMART HOME</h1>
-                            <p>Welcome to our IoT Project!</p>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <h1>SMART HOME</h1>
+                            </div>
+                            <div className="col">
+                                <Bounce><p>Welcome to our IoT Project!</p></Bounce>                           
+                            </div>
                         </div>
                     </div>
                 </Jumbotron>
