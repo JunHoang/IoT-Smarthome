@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {BEDROOMTHINGS} from '../shared/bedroomthings';
+import {INFO} from '../shared/info';
 import { Button } from "@material-ui/core";
 
 class Bedroom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            bedroomthings: BEDROOMTHINGS,
-            isToggleOn: BEDROOMTHINGS.value
+            info: INFO,
+            isToggleOn: INFO.value
         };
     }
 
@@ -19,7 +19,7 @@ class Bedroom extends Component {
 
     render() {
 
-      const bedroom = this.props.bedroomthings.map((bedroomthing) => {
+      const bedroom = this.props.info.map((bedroomthing) => {
         if (bedroomthing.name === "bedLight") {
           return (
             <div className="flex-container">

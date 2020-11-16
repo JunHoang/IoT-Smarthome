@@ -1,9 +1,7 @@
-import {LVROOMTHINGS} from '../shared/lvroomthings';
-import {BEDROOMTHINGS} from '../shared/bedroomthings';
+import {INFO} from '../shared/info';
 
 export const initialState = {
-    bedroomthings: BEDROOMTHINGS,
-    lvroomthings: LVROOMTHINGS
+    info:INFO
 }
 
 export const Reducer = (state = initialState, action) => {

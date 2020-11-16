@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {LVROOMTHINGS} from '../shared/lvroomthings';
+import {INFO} from '../shared/info';
 import { Button } from "@material-ui/core";
 
 class Lvroom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lvroomthings: LVROOMTHINGS,
-            isToggleOn: LVROOMTHINGS.value
+            info: INFO,
+            isToggleOn: INFO.value
         };
     }
 
@@ -19,7 +19,7 @@ class Lvroom extends Component {
 
     render() {
 
-      const lvroom = this.props.lvroomthings.map((lvroomthing) => {
+      const lvroom = this.props.info.map((lvroomthing) => {
         if (lvroomthing.name === "lvLight") {
           return (
             <div className="flex-container">
@@ -33,7 +33,7 @@ class Lvroom extends Component {
             </div>
           )
         }
-        else {
+        if(lvroomthing.name === "thermistor") {
           return (
             <div className="flex-container">
               <div className="photo-entry-block">

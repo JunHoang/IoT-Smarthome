@@ -1,18 +1,14 @@
 import React, { Component} from 'react';
 import Lvroom from './LvroomComponent';
-import {LVROOMTHINGS} from '../shared/lvroomthings';
 import Bedroom from './BedroomComponent';
-import {BEDROOMTHINGS} from '../shared/bedroomthings';
 import Header from './HeaderComponent';
-import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
   return {
-    lvroomthings: state.lvroomthings,
-    bedroomthings: state.bedroomthings
+    info: state.info
   }
 }
 
@@ -40,8 +36,8 @@ class Main extends Component {
         <Header/>
         <Switch>
             <Route path='/home' component={HomePage}/>
-            <Route exact path ='/livingroom' component={() => <Lvroom lvroomthings={this.props.lvroomthings}/>} />
-            <Route exact path ='/bedroom' component={() => <Bedroom bedroomthings={this.props.bedroomthings}/>} />
+            <Route exact path ='/livingroom' component={() => <Lvroom info={this.props.info}/>} />
+            <Route exact path ='/bedroom' component={() => <Bedroom info={this.props.info}/>} />
             <Redirect to="/home"/>
         </Switch>
       </div>
