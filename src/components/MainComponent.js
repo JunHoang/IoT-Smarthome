@@ -5,6 +5,7 @@ import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {fetchInfo} from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -12,13 +13,15 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  fetchInfo: () => {dispatch(fetchInfo())}
+})
+
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   lvroomthings: LVROOMTHINGS,
-    //   bedroomthings: BEDROOMTHINGS
-    // }
+  
+  componentDidMount() {
+    this.props.fetchInfo();
+    console.log('props=' + this.props.info.info)
   }
 
   render() {
@@ -36,8 +39,14 @@ class Main extends Component {
         <Header/>
         <Switch>
             <Route path='/home' component={HomePage}/>
-            <Route exact path ='/livingroom' component={() => <Lvroom info={this.props.info}/>} />
-            <Route exact path ='/bedroom' component={() => <Bedroom info={this.props.info}/>} />
+            <Route exact path ='/livingroom' component={() => <Lvroom 
+            lvroom={this.props.info.info}
+            lvroomLoading={this.props.info.info.isLoading}
+            lvroomErrMess={this.props.info.info.errMess}/>} />
+            <Route exact path ='/bedroom' component={() => <Bedroom 
+            bedroom={this.props.info.info}
+            bedroomLoading={this.props.info.info.isLoading}
+            bedroomErrMess={this.props.info.info.errMess}/>} />
             <Redirect to="/home"/>
         </Switch>
       </div>
@@ -46,4 +55,4 @@ class Main extends Component {
 
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

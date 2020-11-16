@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
-import {INFO} from '../shared/info';
 import { Button } from "@material-ui/core";
+import {Loading} from './LoadingComponent';
 
 class Bedroom extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            info: INFO,
-            isToggleOn: INFO.value
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+        isToggleOn: false
+    };
+}
 
     handleClick = () => {
       this.setState(state => ({
@@ -19,7 +18,7 @@ class Bedroom extends Component {
 
     render() {
 
-      const bedroom = this.props.info.map((bedroomthing) => {
+      const bedroom = this.props.bedroom.map((bedroomthing) => {
         if (bedroomthing.name === "bedLight") {
           return (
             <div className="flex-container">
@@ -33,27 +32,39 @@ class Bedroom extends Component {
             </div>
           )
         }
-        // else {
-        //   return (
-
-                
-        //   )
-        // }
-
       })
-        
-      return(
-        <div className="flex-container">
-          <div className="col-12">
-            <h3>BEDROOM</h3>
+
+      if(this.props.isLoading) {
+        return(
+          <div className="container">
+            <div className="row"><Loading/></div>
           </div>
-          <div className="row">
-              <div>
-                {bedroom}
+        )
+      }
+      else if (this.props.errMess) {
+        return(
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4>{this.props.errMess}</h4>
               </div>
+            </div>
           </div>
-        </div>
-      )
+        )
+      }
+      else  
+        return(
+          <div className="flex-container">
+            <div className="col-12">
+              <h3>BEDROOM</h3>
+            </div>
+            <div className="row">
+                <div>
+                  {bedroom}
+                </div>
+            </div>
+          </div>
+        )
 
     }
 }

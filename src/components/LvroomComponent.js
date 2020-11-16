@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {INFO} from '../shared/info';
-import { Button } from "@material-ui/core";
+import { Button } from '@material-ui/core';
+import {Loading} from './LoadingComponent';
 
 class Lvroom extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            info: INFO,
-            isToggleOn: INFO.value
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+        isToggleOn: false
+    };
+}
 
     handleClick = () => {
       this.setState(state => ({
@@ -19,7 +19,9 @@ class Lvroom extends Component {
 
     render() {
 
-      const lvroom = this.props.info.map((lvroomthing) => {
+      console.log(JSON.stringify(this.props))
+
+      const lvroom = this.props.lvroom.map((lvroomthing) => {
         if (lvroomthing.name === "lvLight") {
           return (
             <div className="flex-container">
@@ -33,7 +35,7 @@ class Lvroom extends Component {
             </div>
           )
         }
-        if(lvroomthing.name === "thermistor") {
+        else if(lvroomthing.name === "thermistor") {
           return (
             <div className="flex-container">
               <div className="photo-entry-block">
@@ -45,17 +47,36 @@ class Lvroom extends Component {
           )
         }
       })
-        
-      return(
-        <div className="flex-container">
-          <div className="col-12">
-            <h3>LIVING ROOM</h3>
+
+      if(this.props.isLoading) {
+        return(
+          <div className="container">
+            <div className="row"><Loading/></div>
           </div>
-          <div className="row">
-            {lvroom}
+        )
+      }
+      else if (this.props.errMess) {
+        return(
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4>{this.props.errMess}</h4>
+              </div>
+            </div>
           </div>
-        </div>
-      )
+        )
+      }
+      else    
+        return(
+          <div className="flex-container">
+            <div className="col-12">
+              <h3>LIVING ROOM</h3>
+            </div>
+            <div className="row">
+              {lvroom}
+            </div>
+          </div>
+        )
 
     }
 }
