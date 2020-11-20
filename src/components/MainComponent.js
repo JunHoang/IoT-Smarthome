@@ -5,7 +5,7 @@ import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {fetchInfo} from '../redux/ActionCreators';
+import {fetchInfo, updateLights} from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -14,7 +14,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchInfo: () => {dispatch(fetchInfo())}
+  fetchInfo: () => {dispatch(fetchInfo())},
+  updateLights: (value) => dispatch(updateLights(value))
 })
 
 class Main extends Component {
@@ -46,7 +47,8 @@ class Main extends Component {
             <Route exact path ='/bedroom' component={() => <Bedroom 
             bedroom={this.props.info.info}
             bedroomLoading={this.props.info.info.isLoading}
-            bedroomErrMess={this.props.info.info.errMess}/>} />
+            bedroomErrMess={this.props.info.info.errMess}/>}
+            updateLights={this.props.updateLights} />
             <Redirect to="/home"/>
         </Switch>
       </div>

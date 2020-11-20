@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {INFO} from '../shared/info';
 import { Button } from '@material-ui/core';
 import {Loading} from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 class Lvroom extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Lvroom extends Component {
             <div className="flex-container">
               <div className="photo-entry-block">
                 <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
+                <img className="photo-img"  src={baseUrl + lvroomthing.image} alt={lvroomthing.name}/>
                 <Button className="m-1" variant="contained" color="primary" onClick={this.handleClick}>
                   {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </Button>
@@ -40,7 +40,7 @@ class Lvroom extends Component {
             <div className="flex-container">
               <div className="photo-entry-block">
                 <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={lvroomthing.image} alt={lvroomthing.name}/>
+                <img className="photo-img"  src={baseUrl + lvroomthing.image} alt={lvroomthing.name}/>
                 <h6>Temperature in livingroom is {lvroomthing.value}</h6>
               </div>
             </div>
