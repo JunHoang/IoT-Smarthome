@@ -11,14 +11,10 @@ class Bedroom extends Component {
     };
   }
 
-  handleClick = (value) => {
-    this.props.updateLights(value);
-    this.setState = {
-      isToggleOn: value,
-    };
-  };
-
   render() {
+
+    console.log('type of this.props.updateLights is ' + typeof this.props.updateLights);
+
     const bedroom = this.props.bedroom.map((bedroomthing) => {
       if (bedroomthing.name === "bedLight") {
         this.setState = {
@@ -37,9 +33,10 @@ class Bedroom extends Component {
                 className="m-1"
                 variant="contained"
                 color="primary"
-                onClick={this.handleClick}
+                onClick={() => this.props.updateLights(bedroomthing.name)}
               >
-                {this.state.isToggleOn ? "ON" : "OFF"}
+                <p>{JSON.stringify(bedroomthing.value)}</p>
+                {/* {this.state.isToggleOn ? "ON" : "OFF"} */}
               </Button>
             </div>
           </div>
