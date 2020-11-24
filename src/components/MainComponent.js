@@ -56,7 +56,7 @@ class Main extends Component {
             path="/bedroom"
             component={() => (
               <Bedroom
-                bedroom={this.props.info.info.filter((bedlight) => bedlight.name === "bedLight")[0]}
+                bedroom={this.props.info.info.filter((bedlight) => bedlight.name === "bedLight")}
                 bedroomLoading={this.props.info.info.isLoading}
                 bedroomErrMess={this.props.info.info.errMess}
                 updateLights={this.props.updateLights}
