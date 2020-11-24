@@ -4,11 +4,12 @@ import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 
 class Bedroom extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: false,
-    };
+
+  light = (statusStr) => {
+    console.log("❤ statusStr: "+ statusStr);
+    if (statusStr == 'true'){
+      return "ON"
+    } else return "OFF";
   }
 
 
@@ -19,10 +20,7 @@ class Bedroom extends Component {
 
     const bedroom = this.props.bedroom.map((bedroomthing) => {
       console.log('bedroomthing: ' + JSON.stringify(bedroomthing));
-      if (bedroomthing.name === "bedLight") {
-        this.setState = {
-          isToggleOn: bedroomthing.value,
-        };
+
         return (
           <div className="flex-container">
             <div key={bedroomthing.id} className="photo-entry-block">
@@ -38,12 +36,11 @@ class Bedroom extends Component {
                 color="primary"
                 onClick={() => this.props.updateLights(bedroomthing.name)}
               >
-                {JSON.stringify(bedroomthing.value)}
+                {this.light(JSON.stringify(bedroomthing.value))}
               </Button>
             </div>
           </div>
         );
-      }
     });
 
     if (this.props.isLoading) {
