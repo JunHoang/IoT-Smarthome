@@ -27,10 +27,6 @@ class Main extends Component {
   }
 
   render() {
-    const HomePage = () => {
-      return <Home />;
-    };
-
     console.log(
       "type of this.props.updateLights is " + typeof this.props.updateLights
     );
@@ -38,13 +34,12 @@ class Main extends Component {
     console.log("this.props.info" + JSON.stringify(this.props.info));
     console.log("this.props.info.info" + JSON.stringify(this.props.info.info));
 
-    let infoArray = []
+    let infoArray = [];
 
-    if (typeof this.props.info.info.db === 'undefined') {
+    if (typeof this.props.info.info.db === "undefined") {
       infoArray = this.props.info.info;
       console.log("infoArray" + JSON.stringify(infoArray));
-    }
-    else {
+    } else {
       infoArray = this.props.info.info.db;
       console.log("infoArray with db" + JSON.stringify(infoArray));
     }
@@ -53,7 +48,7 @@ class Main extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/home" component={HomePage} />
+          <Route path="/home" component={() => <Home infoArray={infoArray} />} />
           <Route
             exact
             path="/livingroom"
@@ -71,7 +66,9 @@ class Main extends Component {
             path="/bedroom"
             component={() => (
               <Bedroom
-                bedroom={infoArray.filter((bedlight) => bedlight.name === "bedLight")}
+                bedroom={infoArray.filter(
+                  (bedlight) => bedlight.name === "bedLight"
+                )}
                 bedroomLoading={infoArray.isLoading}
                 bedroomErrMess={infoArray.errMess}
                 updateLights={this.props.updateLights}
