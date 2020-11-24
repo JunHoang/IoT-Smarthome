@@ -47,7 +47,6 @@ export const addInfo = (info) => ({
 export const updateLights = (name) => (dispatch) => {
     return fetch(baseUrl + 'lights/' + name, {
         method: 'PUT',
-        body:'{}',
         headers: {'Content-Type': 'application/json' },
         credentials: "same-origin"
     }). then(response => {
@@ -61,7 +60,12 @@ export const updateLights = (name) => (dispatch) => {
     }, err => {
         throw err;
     })
-    .then(response => response.json())
-    .then(response => dispatch(addInfo(response)))
+    .then(response => {
+        console.log("response updatelight: " + response.json);
+        return response.json()
+    })
+    .then(response =>  {
+        console.log("response updatelight addInfo: " + JSON.stringify(response));
+        return dispatch(addInfo(response))})
     .catch(error => {console.log('update lights', error.message)});
 };

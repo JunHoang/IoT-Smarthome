@@ -35,6 +35,20 @@ class Main extends Component {
       "type of this.props.updateLights is " + typeof this.props.updateLights
     );
 
+    console.log("this.props.info" + JSON.stringify(this.props.info));
+    console.log("this.props.info.info" + JSON.stringify(this.props.info.info));
+
+    let infoArray = []
+
+    if (typeof this.props.info.info.db === 'undefined') {
+      infoArray = this.props.info.info;
+      console.log("infoArray" + JSON.stringify(infoArray));
+    }
+    else {
+      infoArray = this.props.info.info.db;
+      console.log("infoArray with db" + JSON.stringify(infoArray));
+    }
+
     return (
       <div className="App">
         <Header />
@@ -45,9 +59,9 @@ class Main extends Component {
             path="/livingroom"
             component={() => (
               <Lvroom
-                lvroom={this.props.info.info}
-                lvroomLoading={this.props.info.info.isLoading}
-                lvroomErrMess={this.props.info.info.errMess}
+                lvroom={infoArray}
+                lvroomLoading={infoArray.isLoading}
+                lvroomErrMess={infoArray.errMess}
               />
             )}
           />
@@ -56,9 +70,9 @@ class Main extends Component {
             path="/bedroom"
             component={() => (
               <Bedroom
-                bedroom={this.props.info.info.filter((bedlight) => bedlight.name === "bedLight")}
-                bedroomLoading={this.props.info.info.isLoading}
-                bedroomErrMess={this.props.info.info.errMess}
+                bedroom={infoArray.filter((bedlight) => bedlight.name === "bedLight")}
+                bedroomLoading={infoArray.isLoading}
+                bedroomErrMess={infoArray.errMess}
                 updateLights={this.props.updateLights}
               />
             )}
