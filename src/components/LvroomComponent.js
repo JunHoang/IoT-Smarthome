@@ -4,18 +4,12 @@ import {Loading} from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
 class Lvroom extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        isToggleOn: false
-    };
-}
-
-    handleClick = () => {
-      this.setState(state => ({
-        isToggleOn: !state.isToggleOn
-      }));
-    }
+  light = (statusStr) => {
+    console.log("😜statusStr lvLight: " + statusStr);
+    if (statusStr == 'true'){
+      return "ON"
+    } else return "OFF";
+  }
 
     render() {
 
@@ -25,15 +19,24 @@ class Lvroom extends Component {
         if (lvroomthing.name === "lvLight") {
           return (
             <div className="flex-container">
-              <div className="photo-entry-block">
+              <div key={lvroomthing.id} className="photo-entry-block">
                 <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={baseUrl + lvroomthing.image} alt={lvroomthing.name}/>
-                <Button className="m-1" variant="contained" color="primary" onClick={this.handleClick}>
-                  {this.state.isToggleOn ? 'ON' : 'OFF'}
+                <img
+                  className="photo-img"
+                  src={baseUrl + lvroomthing.image}
+                  alt={lvroomthing.name}
+                />
+                <Button
+                  className="m-1"
+                  variant="contained"
+                  color="primary"
+                  onClick={() => this.props.updateLights(lvroomthing.name)}
+                >
+                  {this.light(JSON.stringify(lvroomthing.value))}
                 </Button>
               </div>
             </div>
-          )
+          );
         }
         else if(lvroomthing.name === "thermistor") {
           return (

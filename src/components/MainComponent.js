@@ -62,6 +62,7 @@ class Main extends Component {
                 lvroom={infoArray}
                 lvroomLoading={infoArray.isLoading}
                 lvroomErrMess={infoArray.errMess}
+                updateLights={this.props.updateLights}
               />
             )}
           />

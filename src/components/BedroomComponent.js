@@ -6,7 +6,7 @@ import { baseUrl } from "../shared/baseUrl";
 class Bedroom extends Component {
 
   light = (statusStr) => {
-    console.log("❤ statusStr: "+ statusStr);
+    console.log("❤ statusStr bedLight: "+ statusStr);
     if (statusStr == 'true'){
       return "ON"
     } else return "OFF";
