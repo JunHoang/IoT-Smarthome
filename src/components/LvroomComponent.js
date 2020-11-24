@@ -23,7 +23,7 @@ class Lvroom extends Component {
                 <h5>{lvroomthing.name}</h5>
                 <img
                   className="photo-img"
-                  src={baseUrl + lvroomthing.image}
+                  src="https://www.shareicon.net/data/256x256/2016/11/15/852747_light-bulb_512x512.png"
                   alt={lvroomthing.name}
                 />
                 <Button
@@ -43,8 +43,8 @@ class Lvroom extends Component {
             <div className="flex-container">
               <div className="photo-entry-block">
                 <h5>{lvroomthing.name}</h5>
-                <img className="photo-img"  src={baseUrl + lvroomthing.image} alt={lvroomthing.name}/>
-                <h6>Temperature in livingroom is {lvroomthing.value}</h6>
+                <img className="photo-img"  src="https://cdn.iconscout.com/icon/free/png-256/temperature-1601934-1358362.png" alt={lvroomthing.name}/>
+                <h5>Temperature in livingroom is {lvroomthing.value}</h5>
               </div>
             </div>
           )

@@ -27,7 +27,7 @@ class Bedroom extends Component {
               <h5>{bedroomthing.name}</h5>
               <img
                 className="photo-img"
-                src={baseUrl + bedroomthing.image}
+                src="https://icons.iconarchive.com/icons/vexels/office/256/bulb-icon.png"
                 alt={bedroomthing.name}
               />
               <Button
