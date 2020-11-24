@@ -11,6 +11,7 @@ class Bedroom extends Component {
     };
   }
 
+
   render() {
 
     console.log('type of this.props.updateLights is ' + typeof this.props.updateLights);
@@ -37,8 +38,7 @@ class Bedroom extends Component {
                 color="primary"
                 onClick={() => this.props.updateLights(bedroomthing.name)}
               >
-                <p>{JSON.stringify(bedroomthing.value)}</p>
-                {/* {this.state.isToggleOn ? "ON" : "OFF"} */}
+                {JSON.stringify(bedroomthing.value)}
               </Button>
             </div>
           </div>
