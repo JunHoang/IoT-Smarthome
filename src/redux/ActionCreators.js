@@ -45,9 +45,9 @@ export const addInfo = (info) => ({
 });
 
 export const updateLights = (name) => (dispatch) => {
-    return fetch(baseUrl + '/lights/' + name, {
+    return fetch(baseUrl + 'lights/' + name, {
         method: 'PUT',
-        mode: 'CORS',
+        body:'{}',
         headers: {'Content-Type': 'application/json' },
         credentials: "same-origin"
     }). then(response => {

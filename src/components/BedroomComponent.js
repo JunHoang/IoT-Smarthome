@@ -14,15 +14,17 @@ class Bedroom extends Component {
   render() {
 
     console.log('type of this.props.updateLights is ' + typeof this.props.updateLights);
+    console.log('this.props.bedroom: ' + JSON.stringify(this.props.bedroom));
 
     const bedroom = this.props.bedroom.map((bedroomthing) => {
+      console.log('bedroomthing: ' + JSON.stringify(bedroomthing));
       if (bedroomthing.name === "bedLight") {
         this.setState = {
           isToggleOn: bedroomthing.value,
         };
         return (
           <div className="flex-container">
-            <div className="photo-entry-block">
+            <div key={bedroomthing.id} className="photo-entry-block">
               <h5>{bedroomthing.name}</h5>
               <img
                 className="photo-img"
