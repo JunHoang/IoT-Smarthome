@@ -29,11 +29,10 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "proxy": "http://46.101.183.30:5000"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
