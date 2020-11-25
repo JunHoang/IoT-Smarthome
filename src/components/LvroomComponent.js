@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Button } from '@material-ui/core';
 import {Loading} from './LoadingComponent';
-import { baseUrl } from '../shared/baseUrl';
 
 class Lvroom extends Component {
   light = (statusStr) => {

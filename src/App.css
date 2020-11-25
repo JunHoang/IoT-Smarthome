@@ -18,16 +18,26 @@ h4, h5, h6 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #e9ecef;
+}
+img{
+  margin:0px;
+}
+.photo-img {
+  margin: 5px;
+  height: 250px;
+  width: 250px;
 }
 
-img {
-  margin: 0;
+.photo-img-home {
+  margin: 10px 50px 10px 50px;
+  height: 250px;
+  width: 250px;
 }
  
 .photo-entry-block {
-   margin: 2rem;
-   width: 80%;
+  padding: 10px;
+  margin: 5px;
+  width: 80%;
 }
  
 .row-header{
@@ -53,7 +63,7 @@ img {
   padding: 20px 0px 20px 0px;
 }
 .jumbotron {
-  padding:70px 30px 70px 30px;
+  padding:50px 30px 50px 30px;
   margin:0px auto;
   background: #8d99ae;
   color:floralwhite;
