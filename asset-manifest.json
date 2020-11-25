@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/IoT-Smarthome/static/css/main.67f374dd.chunk.css",
-    "main.js": "/IoT-Smarthome/static/js/main.78385917.chunk.js",
-    "main.js.map": "/IoT-Smarthome/static/js/main.78385917.chunk.js.map",
-    "runtime-main.js": "/IoT-Smarthome/static/js/runtime-main.2de13a78.js",
-    "runtime-main.js.map": "/IoT-Smarthome/static/js/runtime-main.2de13a78.js.map",
-    "static/css/2.723dce70.chunk.css": "/IoT-Smarthome/static/css/2.723dce70.chunk.css",
-    "static/js/2.c159d35e.chunk.js": "/IoT-Smarthome/static/js/2.c159d35e.chunk.js",
-    "static/js/2.c159d35e.chunk.js.map": "/IoT-Smarthome/static/js/2.c159d35e.chunk.js.map",
-    "static/js/3.ebfb4db2.chunk.js": "/IoT-Smarthome/static/js/3.ebfb4db2.chunk.js",
-    "static/js/3.ebfb4db2.chunk.js.map": "/IoT-Smarthome/static/js/3.ebfb4db2.chunk.js.map",
-    "index.html": "/IoT-Smarthome/index.html",
-    "static/css/2.723dce70.chunk.css.map": "/IoT-Smarthome/static/css/2.723dce70.chunk.css.map",
-    "static/css/main.67f374dd.chunk.css.map": "/IoT-Smarthome/static/css/main.67f374dd.chunk.css.map",
-    "static/js/2.c159d35e.chunk.js.LICENSE.txt": "/IoT-Smarthome/static/js/2.c159d35e.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.css": "/IoT-Smarthome/static/media/fontawesome-webfont.f691f37e.woff"
+    "main.css": "/home/static/css/main.67f374dd.chunk.css",
+    "main.js": "/home/static/js/main.78385917.chunk.js",
+    "main.js.map": "/home/static/js/main.78385917.chunk.js.map",
+    "runtime-main.js": "/home/static/js/runtime-main.72ff3f65.js",
+    "runtime-main.js.map": "/home/static/js/runtime-main.72ff3f65.js.map",
+    "static/css/2.a4a21c25.chunk.css": "/home/static/css/2.a4a21c25.chunk.css",
+    "static/js/2.7cee296d.chunk.js": "/home/static/js/2.7cee296d.chunk.js",
+    "static/js/2.7cee296d.chunk.js.map": "/home/static/js/2.7cee296d.chunk.js.map",
+    "static/js/3.ebfb4db2.chunk.js": "/home/static/js/3.ebfb4db2.chunk.js",
+    "static/js/3.ebfb4db2.chunk.js.map": "/home/static/js/3.ebfb4db2.chunk.js.map",
+    "index.html": "/home/index.html",
+    "static/css/2.a4a21c25.chunk.css.map": "/home/static/css/2.a4a21c25.chunk.css.map",
+    "static/css/main.67f374dd.chunk.css.map": "/home/static/css/main.67f374dd.chunk.css.map",
+    "static/js/2.7cee296d.chunk.js.LICENSE.txt": "/home/static/js/2.7cee296d.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/home/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.2de13a78.js",
-    "static/css/2.723dce70.chunk.css",
-    "static/js/2.c159d35e.chunk.js",
+    "static/js/runtime-main.72ff3f65.js",
+    "static/css/2.a4a21c25.chunk.css",
+    "static/js/2.7cee296d.chunk.js",
     "static/css/main.67f374dd.chunk.css",
     "static/js/main.78385917.chunk.js"
   ]
