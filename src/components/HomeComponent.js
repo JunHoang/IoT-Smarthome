@@ -9,6 +9,10 @@ function Home(props) {
   const haveMotion = infoArray.filter((info) => info.name === "haveMotion")[0];
   console.log("haveMotion", haveMotion);
 
+  const handleNoClick = () => {
+    alert("Call A Police!!!!")
+  }
+
   if (haveKey && haveMotion) {
     const welcomHome = haveKey.value && haveMotion.value;
     if (welcomHome) {
@@ -20,7 +24,11 @@ function Home(props) {
     } else {
       return (
         <div className="container">
-          <h4>Call the police</h4>
+          <h4>Are you home?</h4>
+          <div className="container">
+            <button type="button" onClick={()=> props.updateKey(haveKey.name)} >YES</button>
+            <button type="button" onClick={handleNoClick} >NO</button>
+          </div>
         </div>
       );
     }

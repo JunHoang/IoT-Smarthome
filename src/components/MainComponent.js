@@ -5,7 +5,7 @@ import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchInfo, updateLights } from "../redux/ActionCreators";
+import { fetchInfo, updateLights, updateKey } from "../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
   return {
@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchInfo());
   },
   updateLights: (name) => dispatch(updateLights(name)),
+  updateKey: (name) => dispatch(updateKey(name)),
 });
 
 class Main extends Component {
@@ -48,7 +49,9 @@ class Main extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/home" component={() => <Home infoArray={infoArray} />} />
+          <Route path="/home" component={() => <Home 
+          infoArray={infoArray} 
+          updateKey={this.props.updateKey}/>} />
           <Route
             exact
             path="/livingroom"
