@@ -29,6 +29,7 @@ function Home(props) {
               <img
                 className="photo-img-home"
                 src="https://cdn.clipart.email/94f4a5a4ffc772d740642292ac7e953a_vector-illustration-living-room-living-room-indoor-vector-png-_650-444.jpeg"
+                alt="/livingroom"
               />
             </div>
             <div className="photo-entry">
@@ -38,6 +39,7 @@ function Home(props) {
               <img
                 className="photo-img-home"
                 src="https://images.all-free-download.com/images/graphicthumb/bedroom_decoration_drawing_colored_flat_design_6833073.jpg"
+                alt="/bedroom"
               />
             </div>
           </div>

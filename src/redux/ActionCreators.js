@@ -45,7 +45,7 @@ export const addInfo = (info) => ({
 });
 
 export const updateKey = (name) => (dispatch) => {
-    return fetch(baseUrl + 'security/' + name, {
+    return fetch(baseUrl +'security/'+name,{
         method: 'PUT',
         headers: {'Content-Type': 'application/json' },
         credentials: "same-origin"
@@ -71,7 +71,7 @@ export const updateKey = (name) => (dispatch) => {
 };
 
 export const updateLights = (name) => (dispatch) => {
-    return fetch(baseUrl + 'lights/' + name, {
+    return fetch(baseUrl +'lights/'+name,{
         method: 'PUT',
         headers: {'Content-Type': 'application/json' },
         credentials: "same-origin"
