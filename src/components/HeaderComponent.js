@@ -29,7 +29,7 @@ class Header extends Component {
                 <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/home"><img src='assets/images/logo.png' height="30" width="41" alt='Smart Home' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/home"><img src='https://www.flaticon.com/svg/static/icons/svg/1295/1295141.svg' height="30" width="41" alt='Smart Home' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
