@@ -5,7 +5,7 @@ import {Loading} from './LoadingComponent';
 class Lvroom extends Component {
   light = (statusStr) => {
     console.log("😜statusStr lvLight: " + statusStr);
-    if (statusStr == 'true'){
+    if (statusStr === 'true'){
       return "ON"
     } else return "OFF";
   }

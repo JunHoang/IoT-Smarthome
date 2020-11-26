@@ -6,7 +6,7 @@ class Bedroom extends Component {
 
   light = (statusStr) => {
     console.log("❤ statusStr bedLight: "+ statusStr);
-    if (statusStr == 'true'){
+    if (statusStr === 'true'){
       return "ON"
     } else return "OFF";
   }

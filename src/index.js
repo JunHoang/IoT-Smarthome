@@ -6,8 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
-import { bounce } from 'react-animation';
-import styled, {keyframes} from 'styled-components';
 
 ReactDOM.render(
   <React.StrictMode>
