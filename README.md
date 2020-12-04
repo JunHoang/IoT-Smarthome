@@ -5,7 +5,7 @@
 ## What is IoT SmartHome?
 IoT SmartHome is a website which helps users control lights and see the temperature in the house.  
 
-The wensite was completely written in React framework together with Redux.
+The website was completely written in React framework together with Redux.
 
 ## App’s Feature:
 * User friendly interface
