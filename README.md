@@ -1,6 +1,6 @@
 # IOT SMART HOME
 
-![](homepage.png)
+![](HomePage.png)
 
 ## What is IoT SmartHome?
 IoT SmartHome is a website which helps users control lights and see the temperature in the house.  
@@ -12,7 +12,7 @@ The wensite was completely written in React framework together with Redux.
 * User can see status of lights and temperature in the room.
 * User can turn on and switch off the lights from website.
 
-![](livingroom.png)
+![](LivingRoom.png)
 
 #### Website Link:
 You can see the website in [here](http://smarthome-iot-xamk.herokuapp.com/home)
